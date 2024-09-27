@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { CreateCosteoDto } from './dto/create-costeo.dto';
 import { UpdateCosteoDto } from './dto/update-costeo.dto';
 import { costeos } from 'src/data/dataSource';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class CosteosService {
-  create(createCosteoDto: CreateCosteoDto) {
+  create(createCosteoDto: any) {
+    const uuid = uuidv4()
+    createCosteoDto.uuid = uuid
+    costeos.push(createCosteoDto)
     return 'This action adds a new costeo';
   }
 

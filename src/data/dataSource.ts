@@ -66,7 +66,7 @@ export const catalogos = [
 ]
 
 
-export const costeos = [
+export const costeos: any = [
     {
         uuid: 4125,
         fecha: "2024-05-31",
